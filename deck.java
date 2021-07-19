@@ -59,3 +59,49 @@ public class Colecciones {
     }
 }
 
+package colecciones;
+
+/**
+ *
+ * @author shakb
+ */
+public class Deck {
+    public static void main(String[] args)
+    {
+        Card card = new Card();
+        int PALOS = card.palo.length;
+        int VALORES = card.valor.length;
+        int COLORES = card.color.length;
+        int N = PALOS * VALORES * COLORES; // se calcula N que indicara el tamaño del array card.
+        
+        //initialize deck 
+        ArrayList<String> deck = new ArrayList<String>();
+        for (int i = 0; i < VALORES; i++){
+            for(int j = 0; < PALOS; j++){
+                deck.add(card.palo[j]+ ",Rojo, " + card.valor[i]);//carga los valores en array para cartas Rojas.
+                deck.add(card.palo[j]+ ", Negro, "+ card.valor[i]);//carga los valores en array para cartas Negras
+            }
+        }
+        // Declaramos el Iterador e imprimimos los Elementos del ArrayList
+        Iterator<String> nombreIterator = deck.iterator();
+        while(nombreiterator.hasNext()){
+               String elemento = nombreIterator.next();
+               System.out.print(elemento+ " / ");
+        }
+        shuffle(deck);
+        head(deck);
+        pick(deck);
+        hand(deck);
+    }
+    import java.util.ArrayList;
+        public class Card{
+            
+            ArrayList<String> deck = new ArrayList<String>();
+            String[] palo = {"Treboles", "Corazones", "Picas","Diamantes"};
+            String[] color ={"Rojo", "Negro"};
+            String[] valor = {"2","3","4","5","6","7","8","9","10","A","J","Q","K"};
+        }
+    
+}
+
+
